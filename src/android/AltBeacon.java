@@ -94,7 +94,7 @@ public class AltBeacon extends CordovaPlugin {
     //--------------------------------------------------------------------------
 
     /**
-     * intit serial connection
+     * start ranging beacons
      *
      */
      private void startRangingBeacons() {
