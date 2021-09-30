@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="cordova-plugin-alt-beacon" version="0.0.1">
+    <name>Alt Beacon plugin</name>
+    <description>Detect beacons on Android based on alt beacono library</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,beacons</keywords>
+
+    <js-module src="www/altbeacon.js" name="altbeacon">
+        <clobbers target="altbeacon" />
+    </js-module>
+
+    <platform name="android">
+
+      <config-file target="config.xml" parent="/*">
+          <feature name="AltBeacon">
+              <param name="android-package" value="com.vienom.cordova.plugin.altbeacon.AltBeacon"/>
+              <param name="onload" value="true" />
+          </feature>
+      </config-file>
+
+
+      <source-file src="src/android/AltBeacon.java" target-dir="src/com/vienom/cordova/plugin/altbeacon" />
+
+      <framework src="src/android/beacon.gradle" custom="true" type="gradleReference" />
+      <resource-file src="android-beacon-library-2.17.1.aar" target="libs/android-beacon-library-2.17.1.aar" />
+
+    </platform>
+</plugin>
